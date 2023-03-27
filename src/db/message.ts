@@ -1,7 +1,7 @@
 import { connect } from "./db";
 import crypto from "crypto";
 
-const secret = "my-secret-key"; // Replace with your own secret key
+const secret = "fzBtC#F8m7y$pd2@GQaL!sN6XjZrTcV"; // Replace with your own secret key
 
 export const getMessagesForUser = async (user: string): Promise<{sender: string, message: string}[]> => {
   let db = await connect();
