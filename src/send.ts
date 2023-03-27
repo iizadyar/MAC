@@ -21,12 +21,12 @@ export const sendMessage = async (sender: string, user: string) => {
         }
 
         getUserMessage().then(async (message) => {
-            await saveMessage(message, user);
+            await saveMessage(message, sender, user);
         });
-        log(" Message sent successfully to the user " + user + " from user " +sender);
+        log(" Message was sent successfully to the user " + user + " from user " +sender);
   
     } catch (error) {
-        //log(" cant send message because User does not exist " );
+        //log(" can not send message because User does not exist " );
         console.error("Error occured .", error);
     }
 }
