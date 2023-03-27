@@ -1,3 +1,15 @@
-Sun, 26 Mar 2023 07:41:42 GMT: Sara was created successfully.
-Sun, 26 Mar 2023 07:42:07 GMT:  Message sent successfully to the user Sara from user Iran
-Sun, 26 Mar 2023 07:42:25 GMT: Sara checked the message box successfully.
+Mon, 27 Mar 2023 05:47:13 GMT: Iran was created successfully.
+Mon, 27 Mar 2023 05:47:25 GMT: Sara was created successfully.
+Mon, 27 Mar 2023 05:47:49 GMT: Message sending failed. Unable to authenticate sender Iran.
+Mon, 27 Mar 2023 05:47:57 GMT: Message sending failed. User Ira does not exist.
+Mon, 27 Mar 2023 05:48:09 GMT:  Message was sent successfully to the user Sara from user Iran
+Mon, 27 Mar 2023 05:48:29 GMT: Sar does not exist.
+Mon, 27 Mar 2023 05:48:29 GMT: Sar does not exist or unables to authenticate.
+Mon, 27 Mar 2023 05:48:36 GMT: Sara Unables to authenticate.
+Mon, 27 Mar 2023 05:48:36 GMT: Sara does not exist or unables to authenticate.
+Mon, 27 Mar 2023 05:48:44 GMT: Sara checked the message box successfully.
+
+
+The following message appeared in the console when the message was recalled: 
+Message from sender Iran for user Sara with MAC aa5bd8e8a8cd7d89d36ed0e5e2a94dd051a6aabf749eb223ff4ad8b17013875b verified.
+Iran: Hi-MAC Assignment
