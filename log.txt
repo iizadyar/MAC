@@ -1,15 +1,23 @@
-Mon, 27 Mar 2023 05:47:13 GMT: Iran was created successfully.
-Mon, 27 Mar 2023 05:47:25 GMT: Sara was created successfully.
-Mon, 27 Mar 2023 05:47:49 GMT: Message sending failed. Unable to authenticate sender Iran.
-Mon, 27 Mar 2023 05:47:57 GMT: Message sending failed. User Ira does not exist.
-Mon, 27 Mar 2023 05:48:09 GMT:  Message was sent successfully to the user Sara from user Iran
-Mon, 27 Mar 2023 05:48:29 GMT: Sar does not exist.
-Mon, 27 Mar 2023 05:48:29 GMT: Sar does not exist or unables to authenticate.
-Mon, 27 Mar 2023 05:48:36 GMT: Sara Unables to authenticate.
-Mon, 27 Mar 2023 05:48:36 GMT: Sara does not exist or unables to authenticate.
-Mon, 27 Mar 2023 05:48:44 GMT: Sara checked the message box successfully.
+Mon, 27 Mar 2023 07:22:41 GMT: Error ocurred creating a new user.
+Mon, 27 Mar 2023 07:22:49 GMT: Iran was created successfully.
+Mon, 27 Mar 2023 07:22:57 GMT: Sara was created successfully.
+Mon, 27 Mar 2023 07:23:15 GMT: Message sending failed. User Ira does not exist.
+Mon, 27 Mar 2023 07:23:26 GMT: Message sending failed. Unable to authenticate sender Iran.
+Mon, 27 Mar 2023 07:23:33 GMT:  Message was sent successfully to the user Sara from user Iran
+Mon, 27 Mar 2023 07:24:01 GMT: Sara Unables to authenticate.
+Mon, 27 Mar 2023 07:24:01 GMT: Sara does not exist or unables to authenticate.
+Mon, 27 Mar 2023 07:24:06 GMT: Sara checked the message box successfully.
+Mon, 27 Mar 2023 07:25:03 GMT: Sara checked the message box successfully.
 
 
-The following message appeared in the console when the message was recalled: 
-Message from sender Iran for user Sara with MAC aa5bd8e8a8cd7d89d36ed0e5e2a94dd051a6aabf749eb223ff4ad8b17013875b verified.
-Iran: Hi-MAC Assignment
+
+The message was hashedd using secret key of "my-secret-key". 
+The message was then recalled with the same secret key. The following message was ddisplayed:
+
+Message from sender Iran for user Sara with MAC 37e7af16c073e8c331d77139ef3a0520d43e837a7c8a7277d744311ce5e1df42 verified.
+Iran: HI-MAC Assignment
+
+
+The message was then recalled with secret key of "fzBtC#F8m7y$pd2@GQaL!sN6XjZrTcV". The following message was displayed:
+
+Message from sender Iran for user Sara with MAC 37e7af16c073e8c331d77139ef3a0520d43e837a7c8a7277d744311ce5e1df42 could not be verified.
