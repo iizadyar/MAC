@@ -3,15 +3,16 @@ import crypto from "crypto";
 
 const secret = "my-secret-key"; // Replace with your own secret key
 
-export const getMessagesForUser = async (user: string): Promise<string[]> => {
+export const getMessagesForUser = async (user: string): Promise<{sender: string, message: string}[]> => {
   let db = await connect();
 
-  let messages: string[] = [];
+  let messages: {sender: string, message: string}[] = [];
 
   await db.each(
     `
-    SELECT data, mac FROM Messages
-    WHERE recipient = (
+    SELECT u.user AS sender, m.data, m.mac FROM Messages m
+    JOIN Users u ON u.id = m.sender
+    WHERE m.recipient = (
       SELECT id FROM Users WHERE user = :user
     );
   `,
@@ -23,10 +24,10 @@ export const getMessagesForUser = async (user: string): Promise<string[]> => {
         throw new Error(err);
       }
       if (verifyMAC(row.data, row.mac)) {
-        messages.push(row.data);
-        console.log(`Message for user ${user} with MAC ${row.mac} verified.`);
+        messages.push({sender: row.sender, message: row.data});
+        console.log(`Message from sender ${row.sender} for user ${user} with MAC ${row.mac} verified.`);
       } else {
-        console.log(`Message for user ${user} with MAC ${row.mac} could not be verified.`);
+        console.log(`Message from sender ${row.sender} for user ${user} with MAC ${row.mac} could not be verified.`);
       }
     }
   );
@@ -34,26 +35,31 @@ export const getMessagesForUser = async (user: string): Promise<string[]> => {
   return messages;
 };
 
-export const saveMessage = async (message: string, recipient: string) => {
+
+export const saveMessage = async (message: string, sender: string, recipient: string) => {
   let db = await connect();
 
   const mac = generateMAC(message);
 
+  // Get the ID of the sender
+  const senderIdResult = await db.get(`SELECT id FROM Users WHERE user = ?`, [sender]);
+  if (!senderIdResult) {
+    throw new Error(`Sender ${sender} not found`);
+  }
+  const senderId = senderIdResult.id;
+
   await db.run(
     `
     INSERT INTO Messages 
-      (recipient, data, mac)
+      (sender, recipient, data, mac)
     VALUES (
-      (SELECT id FROM Users WHERE user = :user),
-      :message,
-      :mac
+      ?,
+      (SELECT id FROM Users WHERE user = ?),
+      ?,
+      ?
     )
   `,
-    {
-      ":user": recipient,
-      ":message": message,
-      ":mac": mac,
-    }
+    [senderId, recipient, message, mac]
   );
 };
 
@@ -68,3 +74,4 @@ const verifyMAC = (data: string, mac: string): boolean => {
   hmac.update(data);
   return hmac.digest("hex") === mac;
 };
+

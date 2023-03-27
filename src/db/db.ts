@@ -12,11 +12,13 @@ CREATE TABLE Users (
 
 CREATE TABLE Messages (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    sender TINYTEXT NOT NULL,
     recipient INTEGER NOT NULL REFERENCES Users(id),
     data TEXT NOT NULL,
     mac TEXT NOT NULL
 );
 `;
+
 
 
 export const connect = async (): Promise<Database<sqlite3.Database, sqlite3.Statement>> => {
