@@ -40,7 +40,7 @@ The log function is repeatedly recalled in various files, i.e., new, read, and s
 The log.txt file is placed in the the root of the repository.
 
 
-## Remaining of assignment 1
+## Remaining of assignment 2
 
 An attemp has been done to modify the code and improve the security design by introducing new functions to ask for the sender of each message and also authenticate the sender. The following function can be used:
 
