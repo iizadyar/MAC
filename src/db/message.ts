@@ -1,7 +1,11 @@
+
+
 import { connect } from "./db";
 import crypto from "crypto";
+import fs from "fs";
 
-const secret = "fzBtC#F8m7y$pd2@GQaL!sN6XjZrTcV"; // Replace with your own secret key
+const secret = "my-secret-key"; // Replace with your own secret key
+const logFileName = "log.txt";
 
 export const getMessagesForUser = async (user: string): Promise<{sender: string, message: string}[]> => {
   let db = await connect();
@@ -25,15 +29,20 @@ export const getMessagesForUser = async (user: string): Promise<{sender: string,
       }
       if (verifyMAC(row.data, row.mac)) {
         messages.push({sender: row.sender, message: row.data});
-        console.log(`Message from sender ${row.sender} for user ${user} with MAC ${row.mac} verified.`);
+        const logMessage = `Message from sender ${row.sender} for user ${user} with MAC ${row.mac} verified.\n`;
+        console.log(logMessage);
+        fs.appendFileSync(logFileName, logMessage);
       } else {
-        console.log(`Message from sender ${row.sender} for user ${user} with MAC ${row.mac} could not be verified.`);
+        const logMessage = `Message from sender ${row.sender} for user ${user} with MAC ${row.mac} could not be verified.\n`;
+        console.log(logMessage);
+        fs.appendFileSync(logFileName, logMessage);
       }
     }
   );
 
   return messages;
 };
+
 
 
 export const saveMessage = async (message: string, sender: string, recipient: string) => {

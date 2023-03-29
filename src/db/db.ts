@@ -15,8 +15,19 @@ CREATE TABLE Messages (
     sender TINYTEXT NOT NULL,
     recipient INTEGER NOT NULL REFERENCES Users(id),
     data TEXT NOT NULL,
-    mac TEXT NOT NULL
+    mac TEXT NOT NULL,
+    CONSTRAINT mac_read_only
+      CHECK (mac = OLD.mac)
+      DEFERRABLE INITIALLY DEFERRED
 );
+
+CREATE TRIGGER message_mac_read_only
+BEFORE UPDATE ON Messages
+FOR EACH ROW
+BEGIN
+    SELECT RAISE(ABORT, 'MAC field is read-only') WHERE NEW.mac != OLD.mac;
+END;
+
 `;
 
 
