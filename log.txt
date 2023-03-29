@@ -1,7 +1,19 @@
-Wed, 29 Mar 2023 02:26:21 GMT: Sara checked the message box successfully.
-Wed, 29 Mar 2023 02:32:35 GMT:  Message was sent successfully to the user Sara from user Iran
-Wed, 29 Mar 2023 02:32:50 GMT: Sara checked the message box successfully.
-Wed, 29 Mar 2023 02:40:59 GMT: Sara checked the message box successfully.
-Wed, 29 Mar 2023 02:43:34 GMT: Sara checked the message box successfully.
-Message from sender Iran for user Sara with MAC 37e7af16c073e8c331d77139ef3a0520d43e837a7c8a7277d744311ce5e1df42 verified.
-Message from sender Iran for user Sara with MAC e5cc290adca22e03e9b5655fe348fd1f5169b300e3fab51e3b1dceed0bdbaf28 verified.
+Wed, 29 Mar 2023 03:53:14 GMT: Iran was created successfully.
+Wed, 29 Mar 2023 03:53:21 GMT: Sara was created successfully.
+Wed, 29 Mar 2023 03:53:38 GMT: Message sending failed. User Irn does not exist.
+Wed, 29 Mar 2023 03:53:42 GMT: Message sending failed. User Irn does not exist.
+Wed, 29 Mar 2023 03:53:54 GMT: Message sending failed. Unable to authenticate sender Iran.
+Wed, 29 Mar 2023 03:54:02 GMT:  Message was sent successfully to the user Sara from user Iran
+Wed, 29 Mar 2023 04:10:35 GMT: Sara checked the message box successfully.
+Wed, 29 Mar 2023 04:11:19 GMT: 123 was created successfully.
+Wed, 29 Mar 2023 04:11:23 GMT: Error ocurred creating a new user.
+Wed, 29 Mar 2023 04:11:27 GMT: Error ocurred creating a new user.
+Wed, 29 Mar 2023 04:11:46 GMT: Iran was created successfully.
+Wed, 29 Mar 2023 04:11:52 GMT: Sara was created successfully.
+Wed, 29 Mar 2023 04:11:58 GMT:  Message was sent successfully to the user Sara from user Iran
+Wed, 29 Mar 2023 04:12:07 GMT: Sara checked the message box successfully.
+Message from sender Iran for user Sara with MAC 911819f405be4c39577f3647a1b10822b2abacadb06a149ca19c2f494d56c982 verified.
+Wed, 29 Mar 2023 04:15:01 GMT: Sara Unables to authenticate.
+Wed, 29 Mar 2023 04:15:01 GMT: Sara does not exist or unables to authenticate.
+Wed, 29 Mar 2023 04:15:05 GMT: Sara checked the message box successfully.
+Message from sender Iran for user Sara with MAC 911819f405be4c39577f3647a1b10822b2abacadb06a149ca19c2f494d56c982 verified.
